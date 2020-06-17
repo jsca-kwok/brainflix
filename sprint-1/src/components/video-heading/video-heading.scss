@@ -8,7 +8,7 @@
         width: 100%;
         margin: 0 $mobileMargin;
         @include tablet {
-            margin: 0 $tabletMargin;
+            margin: $tabletMargin 0 0 $tabletMargin;
             width: 93%;
         }
     }

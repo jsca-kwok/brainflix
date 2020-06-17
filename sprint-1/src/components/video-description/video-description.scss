@@ -12,6 +12,9 @@
         @include tablet {
             @include tabletParagraphFont;
         }
+        @include tablet {
+            width: 80%;
+        }
         @include desktop {
             width: 90%;
         }

@@ -10,7 +10,7 @@ class Header extends React.Component {
                 <img className="header__logo" src={logo} alt="brainflix logo" />
                 <input className="header__search" type="text" placeholder="Search"></input>
                 <div className="header__user-container">
-                    <button className="header__button" type="button"><img className="header__button-icon" src={buttonIcon} alt="" /> UPLOAD</button>
+                    <button className="header__button" type="button"><img className="header__button-icon" src={buttonIcon} alt="" />UPLOAD</button>
                     <div className="header__profile-pic"></div>
                 </div>
             </div>

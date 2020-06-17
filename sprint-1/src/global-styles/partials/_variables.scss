@@ -29,9 +29,13 @@ $buttonFontColor: white;
 
 // margins
 
-$mobileMargin: 16px;
-$mobileSmallMargin: 8px;
-$mobileLargeMargin: 24px;
-$tabletMargin: 24px;
-$tabletLargeMargin: 40px;
-$desktopMargin: 180px;
+$mobileMargin: 0.9rem;
+$mobileSmallMargin: 0.4rem;
+$mobileLargeMargin: 1.5rem;
+$tabletMargin: 1.5rem;
+$tabletLargeMargin: 2.4rem;
+$desktopMargin: 11rem;
+
+// video controls
+
+$iconBackgroundColor: rgba(0,0,0,0.7);

@@ -10,7 +10,10 @@
     }
     &__input-container {
         display: flex;
-        width: 85%;
+        width: 100%;
+        @include tablet {
+            width: 85%;
+        }
     }
     &__count {
         margin: $mobileLargeMargin 0;
