@@ -1,0 +1,10 @@
+@import '../../global-styles/styles.scss';
+
+.main-video {
+    &__description {
+        margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
+    }
+    &__description-text {
+        @include mobileParagraphFont;
+    }
+}

@@ -1,0 +1,52 @@
+@import '../../global-styles/styles';
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin: 0 $mobileMargin;
+    border-bottom: 2px $borderColor solid;
+    &__input-container {
+        display: flex;
+    }
+    &__count {
+        margin: $mobileLargeMargin 0;
+        font-weight: 700;
+    }
+    &__heading {
+        @include mobileLabelsFont;
+        font-weight: 600;
+    }
+    &__image-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        margin-right: $mobileMargin;
+        background-color: $defaultImageColor;
+    }
+    &__image-true {
+        background-image: url("../../assets/images/mohan-muruge.jpg");
+        background-size: cover;
+        margin-top: 45px;
+        }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__input {
+        margin-bottom: $mobileMargin;
+        height: 96px;
+        padding: 16px;
+        border: $borderColor solid 2px;
+        border-radius: 4px;
+        background-color: $textFieldBackgroundColor;
+    }
+    &__button {
+        @include button;
+        margin-bottom: $mobileLargeMargin;
+    }
+}

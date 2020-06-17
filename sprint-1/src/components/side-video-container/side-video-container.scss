@@ -1,0 +1,9 @@
+@import '../../global-styles/styles';
+
+.side-container {
+    &__next {
+        @include mobileLabelsFont;
+        font-weight: 600;
+        margin: $mobileLargeMargin $mobileMargin;
+    }
+}

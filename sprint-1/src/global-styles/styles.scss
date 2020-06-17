@@ -1,0 +1,9 @@
+@import './partials/mixins';
+@import './partials/variables';
+@import './partials/typography';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Avenir Next';
+    color: $globalTextColor;
+}

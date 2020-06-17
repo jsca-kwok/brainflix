@@ -1,0 +1,44 @@
+@import '../../global-styles/styles.scss';
+
+.main-video {
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px $borderColor solid;
+        width: 100%;
+        margin: 0 $mobileMargin;
+    }
+    &__title {
+        @include mobileHeaderFont;
+    }
+    &__upload-details {
+        display: flex;
+    }
+    &__channel {
+        margin-right: $mobileSmallMargin;
+        font-weight: 700;
+    }
+    &__timestamp {
+        color: $labelTextColor;
+    }
+    &__stats {
+        display: flex;
+        padding-bottom: 8px;
+        align-items: center;
+    }
+    &__views-icon {
+        height: 8px;
+        margin-right: $mobileSmallMargin;
+    }
+    &__views {
+
+    }
+    &__likes-icon {
+        height: 8px;
+        margin: 0 8px 0 25px;
+    }
+    &__likes {
+
+    }
+}
+//
