@@ -4,12 +4,25 @@
     &__heading {
         display: flex;
         flex-direction: column;
-        border-bottom: 1px $borderColor solid;
+        border-bottom: 2px $borderColor solid;
         width: 100%;
         margin: 0 $mobileMargin;
+        @include tablet {
+            margin: 0 $tabletMargin;
+            width: 93%;
+        }
     }
     &__title {
         @include mobileHeaderFont;
+        @include tablet {
+            @include tabletSecondaryHeaderFont;
+        }
+    }
+    &__upload-detail-container {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
     }
     &__upload-details {
         display: flex;
@@ -29,6 +42,9 @@
     &__views-icon {
         height: 8px;
         margin-right: $mobileSmallMargin;
+        @include tablet {
+            height: 16px;
+        }
     }
     &__views {
 
@@ -36,6 +52,9 @@
     &__likes-icon {
         height: 8px;
         margin: 0 8px 0 25px;
+        @include tablet {
+            height: 16px;
+        }
     }
     &__likes {
 

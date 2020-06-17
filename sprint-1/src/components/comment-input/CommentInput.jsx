@@ -1,5 +1,5 @@
 import React from 'react';
-import '../comment-input/comment-input.scss';
+import './comment-input.scss';
 
 class CommentInput extends React.Component{
     render() {
@@ -12,8 +12,10 @@ class CommentInput extends React.Component{
                     </div>
                     <form className="comment__form">
                         <h3 className="comment__heading">JOIN THE CONVERSATION</h3>
-                        <textarea className="comment__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."></textarea>
-                        <button className="comment__button" type="button">COMMENT</button>
+                        <div className="comment__form-container">
+                            <textarea className="comment__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."></textarea>
+                            <button className="comment__button" type="button">COMMENT</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -22,3 +24,4 @@ class CommentInput extends React.Component{
 }
 
 export default CommentInput;
+

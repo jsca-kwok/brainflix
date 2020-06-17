@@ -5,6 +5,9 @@
         display: flex;
         flex-direction: row;
         border-bottom: 2px solid $borderColor;
+        @include desktop {
+
+        }
     }
     &__image-container {
 
@@ -21,15 +24,32 @@
     &__heading-container {
         display: flex;
         justify-content: space-between;
+        @include desktop {
+            justify-content: flex-start;
+            align-items: center;
+        }
     }
     &__name {
         @include mobileParagraphFont;
         font-weight: 700;
+        @include tablet {
+            @include tabletParagraphFont;
+            font-weight: 700;
+        }
+        @include desktop {
+            margin-right: 8px;
+        }
     }
     &__timestamp {
         @include mobileLabelsFont;
+        @include tablet {
+            @include tabletLabelsFont;
+        }
     }
     &__description {
         @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
     }
 }

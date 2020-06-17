@@ -3,8 +3,17 @@
 .main-video {
     &__description {
         margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
+        @include tablet {
+            margin: $tabletMargin;
+        }
     }
     &__description-text {
         @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
+        @include desktop {
+            width: 90%;
+        }
     }
 }

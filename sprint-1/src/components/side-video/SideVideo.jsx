@@ -1,5 +1,5 @@
 import React from 'react';
-import '../side-video/side-video.scss';
+import './side-video.scss';
 
 class SideVideo extends React.Component {
     render() {

@@ -2,4 +2,7 @@
 
 .comment__container {
     margin: 0 $mobileMargin;
+    @include tablet {
+        margin: 0 $tabletMargin;
+    }
 }

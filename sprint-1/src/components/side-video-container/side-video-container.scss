@@ -1,9 +1,20 @@
 @import '../../global-styles/styles';
 
 .side-container {
+    @include desktop {
+        margin-left: $tabletMargin;
+    }
     &__next {
         @include mobileLabelsFont;
         font-weight: 600;
         margin: $mobileLargeMargin $mobileMargin;
+        @include tablet {
+            @include tabletLabelsFont;
+            font-weight: 600;
+            margin: $tabletLargeMargin $tabletMargin;
+        }
+       @include desktop {
+           margin: $tabletMargin 0;
+       }
     }
 }

@@ -3,8 +3,15 @@
 .side-video {
     margin: 0 $mobileMargin $mobileLargeMargin $mobileMargin;
     display: flex;
+    @include tablet {
+        margin: 0 $tabletMargin $tabletMargin $tabletMargin;
+    }
+    @include desktop {
+        width: 320px;
+        margin: 0 0 $tabletMargin 0;
+    }
     &__thumbnail {
-        height: 100px;
+        height: 70px;
         min-width: 120px;
         background-image: url('../../assets/images/video-list-1.jpg');
         background-size: cover;
@@ -12,13 +19,24 @@
         border-radius: 4px;
     }
     &__text-container {
-
+        @include desktop {
+            width: 100%;
+        }
     }
     &__title {
         margin: 0;
         @include mobileSubheaderFont;
+        @include tablet {
+            @include tabletSubheaderFont;
+        }
     }
     &__channel {
         @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
+        @include desktop {
+            margin: 0;
+        }
     }
 }
