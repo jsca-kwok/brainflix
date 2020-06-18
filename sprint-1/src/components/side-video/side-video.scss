@@ -13,12 +13,15 @@
     &__thumbnail {
         height: 70px;
         min-width: 120px;
-        background-image: url('../../assets/images/video-list-1.jpg');
+        // background-image: url('../../assets/images/video-list-1.jpg');
         background-size: cover;
         margin-right: $mobileMargin;
         border-radius: 4px;
     }
     &__text-container {
+        @include tablet {
+            width: 25%;
+        }
         @include desktop {
             width: 100%;
         }
