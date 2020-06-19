@@ -1,4 +1,5 @@
 import React from 'react';
+import './timestamp.scss';
 
 const Timestamp = (props) => {
     let commentTime = props.timestamp;

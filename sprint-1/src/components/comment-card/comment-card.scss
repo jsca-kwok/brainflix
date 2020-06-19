@@ -15,26 +15,23 @@
     &__heading-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         @include desktop {
             justify-content: flex-start;
             align-items: center;
         }
     }
     &__name {
+        width: 100%;
         @include mobileParagraphFont;
         font-weight: 700;
         @include tablet {
+            width: 30%;
             @include tabletParagraphFont;
             font-weight: 700;
         }
         @include desktop {
             margin-right: 8px;
-        }
-    }
-    &__timestamp {
-        @include mobileLabelsFont;
-        @include tablet {
-            @include tabletLabelsFont;
         }
     }
     &__description {

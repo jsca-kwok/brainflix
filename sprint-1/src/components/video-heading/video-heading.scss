@@ -27,6 +27,7 @@
     }
     &__upload-details {
         display: flex;
+        align-items: center;
     }
     &__channel {
         margin-right: $mobileSmallMargin;

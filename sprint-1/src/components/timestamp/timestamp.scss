@@ -1,0 +1,11 @@
+@import '../../global-styles/styles.scss';
+
+.main-video {
+    &__timestamp {
+        justify-self: flex-end;
+    @include mobileLabelsFont;
+    @include tablet {
+        @include tabletLabelsFont;
+        }
+    }
+}
