@@ -15,9 +15,9 @@ const VideoHeading = (props) => {
                 </div>
                 <div className="main-video__stats">
                     <img className="main-video__views-icon" src={viewsIcon} alt="" />
-                    <p className="main-video__views">{props.views}</p>
+                    <p>{props.views}</p>
                     <img className="main-video__likes-icon" src={likesIcon} alt="" />
-                    <p className="main-video__likes">{props.likes}</p>
+                    <p>{props.likes}</p>
                 </div>
             </div>
         </div>

@@ -10,15 +10,27 @@
         width: 320px;
         margin: 0 0 $tabletMargin 0;
     }
-    &__thumbnail {
+    &__thumbnail-container {
         height: 70px;
-        min-width: 120px;
-        background-size: cover;
-        background-position: center;
+        max-width: 120px;
         margin-right: $mobileMargin;
         border-radius: 4px;
+        overflow: hidden;
+        @include tablet {
+            height: 80px;
+            max-width: 120px;
+        }
+        @include desktop {
+            height: 70px;
+        }
+    }
+    &__thumbnail {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
     &__text-container {
+        width: 80%;
         @include tablet {
             width: 25%;
         }

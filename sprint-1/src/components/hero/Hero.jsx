@@ -17,8 +17,8 @@ const Hero = (props) => {
                     <p className="hero__slider-time">0:00 / {props.duration}</p>
                 </div>
                 <div className="hero__settings-container">
-                    <img className="hero__controls-fullscreen" src={screenIcon} alt="full screen icon" />
-                    <img className="hero__controls-volume" src={volumeIcon} alt="volume icon" />
+                    <img src={screenIcon} alt="full screen icon" />
+                    <img src={volumeIcon} alt="volume icon" />
                 </div>
             </div>
         </div>
