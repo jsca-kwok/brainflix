@@ -6,9 +6,9 @@ const CommentContainer = (props) => {
     return (
         <div className="comment__container">
             {   
-                props.mainVideo.comments.map((item, index) => { 
+                props.mainVideo.comments.map((item) => { 
                     return (
-                        <CommentCard name={item.name} timestamp={item.timestamp} comment={item.comment} key={index} />
+                        <CommentCard name={item.name} timestamp={item.timestamp} comment={item.comment} key={item.id} />
                     ) 
                 })
             }    

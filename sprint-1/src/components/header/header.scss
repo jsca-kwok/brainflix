@@ -30,7 +30,7 @@
         padding-left: 3.2rem;
         padding-right: 16px;
         border-radius: 4px;
-        border: $textFieldBorderColor solid 2px;
+        border: $textFieldBorderColor solid 1px;
         background-color: $textFieldBackgroundColor;
         background-image: url('../../assets/icons/svg/icon-search.svg');
         background-position: 5% 50%;
@@ -73,7 +73,7 @@
     &__profile-pic {
         min-width: 48px;
         min-height: 48px;
-        background-image: url("../../assets/images/mohan-muruge.jpg");
+        background-image: url("/assets/images/mohan-muruge.jpg");
         background-size: cover;
         border-radius: 50px;
         margin-top: $mobileSmallMargin;

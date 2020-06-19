@@ -2,7 +2,9 @@
 
 .side-container {
     @include desktop {
-        margin-left: $tabletMargin;
+        padding-top: $tabletMargin;
+        padding-left: $tabletMargin;
+        border-left: 1px solid $borderColor;
     }
     &__next {
         @include mobileLabelsFont;

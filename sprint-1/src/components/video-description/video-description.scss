@@ -4,7 +4,10 @@
     &__description {
         margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
         @include tablet {
-            margin: $tabletMargin;
+            // margin: $tabletMargin;
+        }
+        @include desktop {
+            margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
         }
     }
     &__description-text {

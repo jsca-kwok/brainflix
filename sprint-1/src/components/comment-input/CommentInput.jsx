@@ -7,7 +7,7 @@ const CommentInput = (props) => {
             <p className="comment__count">{props.commentCount} Comments</p>
             <div className="comment__input-container">
                 <div className="comment__image-container">
-                    <div className="comment__image comment__image-true" alt="profile picture"></div>
+                    <div className="comment__image comment__image-user" alt="profile picture"></div>
                 </div>
                 <form className="comment__form">
                     <h3 className="comment__heading">JOIN THE CONVERSATION</h3>

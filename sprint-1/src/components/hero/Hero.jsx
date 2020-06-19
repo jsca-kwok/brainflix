@@ -10,11 +10,11 @@ const Hero = (props) => {
             <video className="hero__video" src={props.src} poster={props.poster}></video>
             <div className="hero__controls">
                 <div className="hero__play-container">
-                    <a href="#"><img className="hero__controls-play" src={playIcon} alt="play button"/></a>
+                    <img className="hero__controls-play" src={playIcon} alt="play button"/>
                 </div>
                 <div className="hero__scrubber-container">
                     <div className="hero__slider"></div>
-                    <p className="hero__slider-time">0:00 / 0:42</p>
+                    <p className="hero__slider-time">0:00 / {props.duration}</p>
                 </div>
                 <div className="hero__settings-container">
                     <img className="hero__controls-fullscreen" src={screenIcon} alt="full screen icon" />

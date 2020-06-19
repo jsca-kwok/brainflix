@@ -4,10 +4,7 @@
     &__card {
         display: flex;
         flex-direction: row;
-        border-bottom: 2px solid $borderColor;
-        @include desktop {
-
-        }
+        border-bottom: 1px solid $borderColor;
     }
     &__image-container {
 
@@ -15,7 +12,7 @@
     &__image {
     
     }
-    &__image-false {
+    &__image-default {
         margin-top: $mobileLargeMargin;
     }
     &__text-container {
@@ -47,9 +44,13 @@
         }
     }
     &__description {
+        margin-top: 0;
         @include mobileParagraphFont;
         @include tablet {
             @include tabletParagraphFont;
+        }
+        @include desktop {
+            padding-right: $tabletMargin;
         }
     }
 }

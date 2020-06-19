@@ -4,18 +4,19 @@
     &__heading {
         display: flex;
         flex-direction: column;
-        border-bottom: 2px $borderColor solid;
+        border-bottom: 1px $borderColor solid;
         width: 100%;
         margin: 0 $mobileMargin;
         @include tablet {
-            margin: $tabletMargin 0 0 $tabletMargin;
-            width: 93%;
+            margin-top: $tabletMargin 0 0 $tabletMargin;
+            width: 97%;
         }
     }
     &__title {
         @include mobileHeaderFont;
         @include tablet {
             @include tabletSecondaryHeaderFont;
+            margin-bottom: 0;
         }
     }
     &__upload-detail-container {
@@ -38,6 +39,7 @@
         display: flex;
         padding-bottom: 8px;
         align-items: center;
+        padding-right: 20px;
     }
     &__views-icon {
         height: 8px;

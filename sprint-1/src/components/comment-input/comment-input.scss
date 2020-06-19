@@ -4,15 +4,22 @@
     display: flex;
     flex-direction: column;
     margin: 0 $mobileMargin;
-    border-bottom: 2px $borderColor solid;
+    border-bottom: 1px $borderColor solid;
     @include tablet {
         margin: 0 $tabletMargin;
+    }
+    @include desktop {
+        margin: 0;
+        padding: 0 $tabletMargin;
     }
     &__input-container {
         display: flex;
         width: 100%;
         @include tablet {
             width: 85%;
+        }
+        @include desktop {
+            width: 90%;
         }
     }
     &__count {
@@ -40,12 +47,12 @@
             margin-bottom: 10px;
         }
     }
-    &__image-true {
-        background-image: url("../../assets/images/mohan-muruge.jpg");
+    &__image-user {
+        background-image: url("/assets/images/mohan-muruge.jpg");
         background-size: cover;
         margin-top: 45px;
-        @include desktop {
-            align-self: center;
+        @include tablet {
+            margin-top: 50px;
         }
     }
     &__form {
@@ -58,7 +65,7 @@
         margin-bottom: $mobileMargin;
         height: 96px;
         padding: 16px;
-        border: $borderColor solid 2px;
+        border: $borderColor solid 1px;
         border-radius: 4px;
         background-color: $textFieldBackgroundColor;
         @include tablet {

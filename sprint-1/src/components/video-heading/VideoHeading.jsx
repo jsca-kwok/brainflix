@@ -2,6 +2,7 @@ import React from 'react';
 import './video-heading.scss';
 import viewsIcon from '../../assets/icons/svg/icon-views.svg';
 import likesIcon from '../../assets/icons/svg/icon-likes.svg';
+import Timestamp from '../timestamp/Timestamp';
 
 const VideoHeading = (props) => {
     return (
@@ -10,7 +11,7 @@ const VideoHeading = (props) => {
             <div className="main-video__upload-detail-container">
                 <div className="main-video__upload-details">
                     <p className="main-video__channel">{props.channel}</p>
-                    <p className="main-video__timestamp">{props.timestamp}</p>
+                    <Timestamp timestamp={props.timestamp}/>
                 </div>
                 <div className="main-video__stats">
                     <img className="main-video__views-icon" src={viewsIcon} alt="" />

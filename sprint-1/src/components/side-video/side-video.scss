@@ -13,8 +13,8 @@
     &__thumbnail {
         height: 70px;
         min-width: 120px;
-        // background-image: url('../../assets/images/video-list-1.jpg');
         background-size: cover;
+        background-position: center;
         margin-right: $mobileMargin;
         border-radius: 4px;
     }

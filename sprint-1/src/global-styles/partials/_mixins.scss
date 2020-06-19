@@ -10,7 +10,7 @@
     }
 }
 
-// button styline
+// button styling
 @mixin button {
     height: 48px;
     width: 100%;
@@ -26,38 +26,32 @@
 @mixin mobileHeaderFont {
     font-weight: 700;
     font-size: 24px;
-    line-height: 32px;
 }
 
 @mixin mobileSubheaderFont {
     font-weight: 600;
     font-size: 14px;
-    line-height: 22px;
 }
 
 @mixin mobileParagraphFont {
     font-weight: normal;
     font-size: 13px;
-    line-height: 18px;
 }
 
 @mixin mobileLabelsFont {
     font-weight: normal;
     font-size: 12px;
-    line-height: 20px;
     color: $labelTextColor;
 }
 
 @mixin tabletMainHeaderFont {
     font-weight: 700;
     font-size: 60px;
-    line-height: 68px;
 }
 
 @mixin tabletSecondaryHeaderFont {
     font-weight: 700;
     font-size: 32px;
-    line-height: 32px;
 }
 
 @mixin tabletSubheaderFont {
@@ -68,12 +62,10 @@
 @mixin tabletParagraphFont {
     font-weight: normal;
     font-size: 14px;
-    line-height: 22px;
 }
 
 @mixin tabletLabelsFont {
     font-weight: normal;
     font-size: 12px;
-    line-height: 20px;
     color: $labelTextColor;
 }
