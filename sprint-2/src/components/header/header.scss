@@ -17,7 +17,7 @@
         height: 48px;
         padding: 10px;
         @include tablet {
-            margin-right: 169px;
+            margin-right: 120px;
             padding: 0;
         }
         @include desktop {
@@ -47,6 +47,11 @@
         @include tablet {
             padding-top: 16px;
         }
+    }
+    &__upload-link {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
     &__button {
         @include button;
