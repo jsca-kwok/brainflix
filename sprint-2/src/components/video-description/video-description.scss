@@ -1,0 +1,25 @@
+@import '../../global-styles/styles.scss';
+
+.main-video {
+    &__description {
+        margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
+        @include tablet {
+            // margin: $tabletMargin;
+        }
+        @include desktop {
+            margin: $mobileLargeMargin $mobileMargin 0 $mobileMargin;
+        }
+    }
+    &__description-text {
+        @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
+        @include tablet {
+            width: 80%;
+        }
+        @include desktop {
+            width: 90%;
+        }
+    }
+}

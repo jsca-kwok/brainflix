@@ -1,0 +1,22 @@
+@import '../../global-styles/styles';
+
+.side-container {
+    @include desktop {
+        padding-top: $tabletMargin;
+        padding-left: $tabletMargin;
+        border-left: 1px solid $borderColor;
+    }
+    &__next {
+        @include mobileLabelsFont;
+        font-weight: 600;
+        margin: $mobileLargeMargin $mobileMargin;
+        @include tablet {
+            @include tabletLabelsFont;
+            font-weight: 600;
+            margin: $tabletLargeMargin $tabletMargin;
+        }
+       @include desktop {
+           margin: $tabletMargin 0;
+       }
+    }
+}

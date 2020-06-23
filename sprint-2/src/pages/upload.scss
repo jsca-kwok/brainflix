@@ -1,0 +1,141 @@
+@import '../global-styles/styles.scss';
+
+.upload {
+    margin: 0 $mobileMargin;
+    border-top: 1px $borderColor solid;
+    @include tablet {
+        margin: 0;
+    }
+    @include desktop {
+        margin: 0 $desktopMargin;
+    }
+    &__heading {
+        @include mobileHeaderFont;
+        margin-top: $mobileLargeMargin;
+        margin-bottom: $mobileNewSectionMargin;
+        @include tablet {
+            @include tabletSecondaryHeaderFont;
+            margin: $tabletLargeMargin $tabletMargin $tabletLargeMargin $tabletMargin;
+            padding-bottom: $tabletMargin;
+            border-bottom: 1px $borderColor solid;
+        }
+        @include desktop {
+            margin-left: 0;
+        }
+    }
+    &__label {
+        @include mobileLabelsFont;
+        font-weight: 600;
+        @include tablet {
+            @include tabletLabelsFont;
+            font-weight: 600;
+            margin-left: $tabletMargin;
+        }
+        @include desktop {
+            margin: 0;
+        }
+    }
+    &__detail-container {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__thumbnail-container {
+        @include desktop {
+            margin: 0;
+            margin-right: $tabletMargin;
+            width: 60%;
+        }
+    }
+    &__preview {
+        width: 100%;
+        height: auto;
+        margin-bottom: $mobileNewSectionMargin;
+        border-radius: 4px;
+        @include tablet {
+            margin: 0 $tabletMargin $tabletLargeMargin $tabletMargin;
+            width: 50%;
+        }
+        @include desktop {
+            margin: 0;
+            width: 100%;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            width: 100%;
+        }
+    }
+    &__title-input {
+        @include mobileParagraphFont;
+        border: $textFieldBorderColor solid 1px;
+        background-color: $textFieldBackgroundColor;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        margin-bottom: $mobileLargeMargin;
+        @include tablet {
+            @include tabletParagraphFont;
+            margin: 0 $tabletMargin $tabletMargin $tabletMargin;
+        }
+        @include desktop {
+            margin: 0;
+            margin-bottom: $tabletMargin;
+        }
+    }
+    &__description-input {
+        @include mobileParagraphFont;
+        height: 143px;
+        border: $textFieldBorderColor solid 1px;
+        background-color: $textFieldBackgroundColor;
+        padding: 16px;
+        border-radius: 4px;
+        margin-bottom: $mobileNewSectionMargin;
+        @include tablet {
+            @include tabletParagraphFont;
+            margin: 0 $tabletMargin $tabletLargeMargin $tabletMargin;
+        }
+        @include desktop {
+            margin: 0;
+            margin-bottom: $tabletLargeMargin;
+            height: 7vw;
+        }
+    }
+    &__buttons-container {
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            border-top: 1px $borderColor solid;
+            padding: $tabletLargeMargin 0;
+            margin: 0 $tabletMargin;
+        }
+        @include desktop {
+            margin: 0;
+        }
+    }
+    &__button {
+        @include button;
+        @include tablet {
+            width: 20%;
+            order: 1;
+        }
+        @include desktop {
+            width: 15%;
+        }
+    }
+    &__cancel {
+        @include button;
+        background-color: $buttonFontColor;
+        color: $buttonBackgroundColor;
+        @include tablet {
+            margin: 0 $tabletMargin;
+            width: 20%;
+        }
+        @include desktop {
+            width: 15%;
+        }
+    }
+}

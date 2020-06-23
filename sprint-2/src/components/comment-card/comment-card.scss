@@ -1,0 +1,47 @@
+@import '../../global-styles/styles.scss';
+
+.comment {
+    &__card {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid $borderColor;
+    }
+    &__image-default {
+        margin-top: $mobileLargeMargin;
+    }
+    &__text-container {
+        margin-top: $mobileSmallMargin;
+    }
+    &__heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include desktop {
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+    &__name {
+        width: 100%;
+        @include mobileParagraphFont;
+        font-weight: 700;
+        @include tablet {
+            width: 30%;
+            @include tabletParagraphFont;
+            font-weight: 700;
+        }
+        @include desktop {
+            margin-right: 8px;
+        }
+    }
+    &__description {
+        margin-top: 0;
+        @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
+        @include desktop {
+            padding-right: $tabletMargin;
+        }
+    }
+}
