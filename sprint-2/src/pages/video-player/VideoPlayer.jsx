@@ -1,21 +1,17 @@
 import React from 'react';
-import data from '../../data.json';
 import Header from '../../components/header/Header';
 import Hero from '../../components/hero/Hero';
 import Main from '../../components/main/Main';
 
-class VideoPlayer extends React.Component {
-  state = {data};
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <Hero src={process.env.PUBLIC_URL + this.state.data[1][0].video} poster={process.env.PUBLIC_URL + this.state.data[1][0].image} duration={this.state.data[1][0].duration} />
-        <Main mainVideo={this.state.data[1][0]} sideVideos={this.state.data[0]} />
-      </div>
-    );
-  }
+const VideoPlayer = (props) => {
+  return (
+    <div>
+      <Header />
+      <Hero src={props.src} poster={props.poster} duration={props.duration} />
+      <Main mainVideo={props.mainVideo} sideVideos={props.sideVideos} />
+    </div>
+  );
 }
+
 
 export default VideoPlayer;
