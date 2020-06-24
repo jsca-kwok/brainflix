@@ -15,6 +15,7 @@ class VideoPlayer extends React.Component {
 
   // seed
   componentDidMount() {
+    console.log(this.props);
     Axios
     .get(`${url}${videos}${defaultVideoId}${api_key}`)
     .then(res => {
@@ -24,15 +25,16 @@ class VideoPlayer extends React.Component {
 
   // to update main video displayed
   componentDidUpdate(prevProps) {
-    // display default video if current path is root
-    if (window.location.pathname === "/") {
+    // if on root path (no id param), display default video - added && condition to prevent infinite looping
+    if (!this.props.match.params.id && (this.props.match.params.id !== prevProps.match.params.id)) {
       Axios
       .get(`${url}${videos}${defaultVideoId}${api_key}`)
       .then(res => {
         this.setState({showcaseVid: res.data})
       })
+    }
     // if current path is different than previous path, update state with new video info
-    } else if (this.props.match.params.id !== prevProps.match.params.id) {
+    else if (this.props.match.params.id !== prevProps.match.params.id) {
       Axios
       .get(`${url}${videos}/${this.props.match.params.id}${api_key}`)
       .then(res => {
