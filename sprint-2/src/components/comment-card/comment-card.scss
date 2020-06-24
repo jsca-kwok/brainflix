@@ -11,6 +11,7 @@
     }
     &__text-container {
         margin-top: $mobileSmallMargin;
+        width: 100%;
     }
     &__heading-container {
         display: flex;
@@ -22,7 +23,6 @@
         }
     }
     &__name {
-        width: 100%;
         @include mobileParagraphFont;
         font-weight: 700;
         @include tablet {

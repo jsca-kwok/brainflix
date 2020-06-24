@@ -19,10 +19,10 @@ const Timestamp = (props) => {
             return <p className="main-video__timestamp">{weeks} weeks and {days} days ago</p>;
         case secondsDiff > 3600:
             let hours = Math.floor(secondsDiff / 3600);
-            let minutes = Math.floor((secondsDiff % 3600) / 60);
+            minutes = Math.floor((secondsDiff % 3600) / 60);
             return <p className="main-video__timestamp">{hours} hours and {minutes} minutes ago</p>;
         case secondsDiff > 60:
-            minutes = Math.floor(secondsDiff / 60);
+            let minutes = Math.floor(secondsDiff / 60);
             return <p className="main-video__timestamp">{minutes} minutes ago</p>
         default:
             return <p className="main-video__timetamp">{secondsDiff} seconds ago</p>

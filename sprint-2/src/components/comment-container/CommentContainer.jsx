@@ -6,7 +6,11 @@ const CommentContainer = ({mainVideoDetails}) => {
     return (
         <div className="comment__container">
             {   
-                mainVideoDetails.comments.map((item) => { 
+                mainVideoDetails.comments
+                // sort comments to display most recent on top
+                .sort((a, b) => { return b.timestamp - a.timestamp })
+                // map to render each comment
+                .map((item) => { 
                     return (
                         <CommentCard name={item.name} timestamp={item.timestamp} comment={item.comment} key={item.id} />
                     ) 

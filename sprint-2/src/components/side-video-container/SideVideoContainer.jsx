@@ -19,6 +19,7 @@ class SideVideoContainer extends React.Component {
     .then(res => {
       this.setState({nextVideos: res.data})
     })
+    .catch(err => console.error(err))
   }
 
   render() {

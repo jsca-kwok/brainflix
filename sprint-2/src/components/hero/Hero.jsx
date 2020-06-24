@@ -4,17 +4,17 @@ import playIcon from '../../assets/icons/svg/icon-play.svg';
 import screenIcon from '../../assets/icons/svg/icon-fullscreen.svg';
 import volumeIcon from '../../assets/icons/svg/icon-volume.svg';
 
-const Hero = (props) => {
+const Hero = ({src, poster, duration}) => {
     return (
         <div className="hero">
-            <video className="hero__video" src={props.src} poster={props.poster}></video>
+            <video className="hero__video" src={src} poster={poster}></video>
             <div className="hero__controls">
                 <div className="hero__play-container">
                     <img className="hero__controls-play" src={playIcon} alt="play button"/>
                 </div>
                 <div className="hero__scrubber-container">
                     <div className="hero__slider"></div>
-                    <p className="hero__slider-time">0:00 / {props.duration}</p>
+                    <p className="hero__slider-time">0:00 / {duration}</p>
                 </div>
                 <div className="hero__settings-container">
                     <img src={screenIcon} alt="full screen icon" />

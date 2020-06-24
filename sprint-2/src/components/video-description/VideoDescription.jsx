@@ -1,11 +1,11 @@
 import React from 'react';
 import './video-description.scss';
 
-const VideoDescription = (props) => {
+const VideoDescription = ({description}) => {
     return (
         <div className="main-video__description">
             <p className="main-video__description-text">
-                {props.description}
+                {description}
             </p>
         </div>
     )
