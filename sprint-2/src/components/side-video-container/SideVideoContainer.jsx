@@ -12,6 +12,7 @@ class SideVideoContainer extends React.Component {
 
   state = {nextVideos: []};
 
+  // seed 
   componentDidMount() {
     Axios
     .get(url + videos + api_key)
@@ -25,7 +26,11 @@ class SideVideoContainer extends React.Component {
       <div className="side-container">
           <p className="side-container__next">NEXT VIDEO</p>
           {
-              this.state.nextVideos.map((item) => {
+              // filter out current video from side video list
+              this.state.nextVideos.filter((item) => {
+                return this.props.videoId !== item.id
+              // map each of the leftover videos to display on page as a link
+              }).map((item) => {
                   return (
                       <Link to={`/videos/${item.id}`} key={item.id}>
                           <SideVideo title={item.title} channel={item.channel} image={item.image} id={item.id}/>

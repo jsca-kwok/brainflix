@@ -11,7 +11,8 @@ const Main = ({mainVideoDetails}) => {
           <MainVideoInfo mainVideoDetails={mainVideoDetails} />
           <CommentContainer mainVideoDetails={mainVideoDetails} />
         </div>
-          <SideVideoContainer />
+          {/* pass down video id to compare with ids of side videos */}
+          <SideVideoContainer videoId={mainVideoDetails.id}/>
       </div>
     );
   }

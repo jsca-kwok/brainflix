@@ -13,6 +13,7 @@ class VideoPlayer extends React.Component {
 
   state={showcaseVid: []};
 
+  // seed
   componentDidMount() {
     Axios
     .get(`${url}${videos}${defaultVideoId}${api_key}`)
@@ -21,13 +22,16 @@ class VideoPlayer extends React.Component {
     })
   }
 
+  // to update main video displayed
   componentDidUpdate(prevProps) {
+    // display default video if current path is root
     if (window.location.pathname === "/") {
       Axios
       .get(`${url}${videos}${defaultVideoId}${api_key}`)
       .then(res => {
         this.setState({showcaseVid: res.data})
       })
+    // if current path is different than previous path, update state with new video info
     } else if (this.props.match.params.id !== prevProps.match.params.id) {
       Axios
       .get(`${url}${videos}/${this.props.match.params.id}${api_key}`)
@@ -42,6 +46,7 @@ class VideoPlayer extends React.Component {
       <div>
         <Header />
         <Hero src={this.state.showcaseVid.video+api_key} poster={this.state.showcaseVid.image} duration={this.state.showcaseVid.duration} />
+        {/* only render <Main> component if comments array is not undefined (i.e. state has been seeded) */}
         {
           this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} /> : null
         }
