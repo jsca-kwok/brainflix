@@ -27,7 +27,7 @@ class SideVideoContainer extends React.Component {
           {
               this.state.nextVideos.map((item) => {
                   return (
-                      <Link to={`${item.id}`} key={item.id}>
+                      <Link to={`/videos/${item.id}`} key={item.id}>
                           <SideVideo title={item.title} channel={item.channel} image={item.image} id={item.id}/>
                       </Link>
                   )

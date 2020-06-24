@@ -10,27 +10,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route 
-            path="/" exact 
-            render={
-              (routeProps) => {
-                return (
-                  <VideoPlayer />
-                )
-              }
-            } 
-          />
+          <Route path="/" exact component={VideoPlayer}/>
           <Route path="/upload" component={Upload} />
-          <Route 
-            path=":id"
-            render={
-              (routeProps) => {
-                return (
-                  <VideoPlayer />
-                )
-              }
-            }
-          />
+          <Route path="/videos/:id" component={VideoPlayer} />
         </Switch>
       </BrowserRouter>
     );

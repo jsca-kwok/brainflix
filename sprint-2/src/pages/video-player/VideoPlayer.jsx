@@ -15,10 +15,26 @@ class VideoPlayer extends React.Component {
 
   componentDidMount() {
     Axios
-    .get(url + videos + defaultVideoId + api_key)
+    .get(`${url}${videos}${defaultVideoId}${api_key}`)
     .then(res => {
       this.setState({showcaseVid: res.data})
     })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (window.location.pathname === "/") {
+      Axios
+      .get(`${url}${videos}${defaultVideoId}${api_key}`)
+      .then(res => {
+        this.setState({showcaseVid: res.data})
+      })
+    } else if (this.props.match.params.id !== prevProps.match.params.id) {
+      Axios
+      .get(`${url}${videos}/${this.props.match.params.id}${api_key}`)
+      .then(res => {
+        this.setState({showcaseVid: res.data});
+      }) 
+    } 
   }
 
   render() {
@@ -27,7 +43,7 @@ class VideoPlayer extends React.Component {
         <Header />
         <Hero src={this.state.showcaseVid.video+api_key} poster={this.state.showcaseVid.image} duration={this.state.showcaseVid.duration} />
         {
-          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} /> : console.log('still undefined')
+          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} /> : null
         }
       </div>
     );
