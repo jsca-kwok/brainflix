@@ -3,7 +3,7 @@ import './timestamp.scss';
 
 const Timestamp = (props) => {
     let commentTime = props.timestamp;
-    let secondsDiff = (Date.now()/1000 - commentTime);
+    let secondsDiff = ((Date.now() - commentTime)/1000);
     switch (true) {
         case secondsDiff > 3153600:
             let years = Math.floor(secondsDiff/31536000);

@@ -4,14 +4,14 @@ import CommentContainer from '../comment-container/CommentContainer';
 import SideVideoContainer from '../side-video-container/SideVideoContainer';
 import './main.scss';
 
-const Main = (props) => {
+const Main = ({mainVideoDetails}) => {
     return (
       <div className="main">
         <div className="main__video-details">
-          <MainVideoInfo mainVideo={props.mainVideo} />
-          <CommentContainer mainVideo={props.mainVideo} />
+          <MainVideoInfo mainVideoDetails={mainVideoDetails} />
+          <CommentContainer mainVideoDetails={mainVideoDetails} />
         </div>
-          <SideVideoContainer sideVideos={props.sideVideos} />
+          <SideVideoContainer />
       </div>
     );
   }

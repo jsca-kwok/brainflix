@@ -2,11 +2,11 @@ import React from 'react';
 import CommentCard from '../comment-card/CommentCard';
 import '../comment-container/comment-container.scss';
 
-const CommentContainer = (props) => {
+const CommentContainer = ({mainVideoDetails}) => {
     return (
         <div className="comment__container">
             {   
-                props.mainVideo.comments.map((item) => { 
+                mainVideoDetails.comments.map((item) => { 
                     return (
                         <CommentCard name={item.name} timestamp={item.timestamp} comment={item.comment} key={item.id} />
                     ) 

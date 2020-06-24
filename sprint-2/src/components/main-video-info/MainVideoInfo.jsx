@@ -3,12 +3,12 @@ import VideoHeading from '../video-heading/VideoHeading';
 import VideoDescription from '../video-description/VideoDescription';
 import CommentInput from '../comment-input/CommentInput';
 
-const MainVideoInfo = (props) => {
+const MainVideoInfo = ({mainVideoDetails}) => {
     return (
         <div className="main-video">
-            <VideoHeading title={props.mainVideo.title} channel={props.mainVideo.channel} timestamp={props.mainVideo.timestamp} views={props.mainVideo.views} likes={props.mainVideo.likes} />
-            <VideoDescription description={props.mainVideo.description} />
-            <CommentInput commentCount={props.mainVideo.comments.length} />
+            <VideoHeading title={mainVideoDetails.title} channel={mainVideoDetails.channel} timestamp={mainVideoDetails.timestamp} views={mainVideoDetails.views} likes={mainVideoDetails.likes} />
+            <VideoDescription description={mainVideoDetails.description} />
+            <CommentInput commentCount={mainVideoDetails.comments.length} />
         </div>
     )
 }
