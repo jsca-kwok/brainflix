@@ -1,8 +1,8 @@
 import React from 'react';
-import MainVideoInfo from '../main-video-info/MainVideoInfo';
-import CommentContainer from '../comment-container/CommentContainer';
-import SideVideoContainer from '../side-video-container/SideVideoContainer';
-import './main.scss';
+import MainVideoInfo from '../MainVideoInfo/MainVideoInfo';
+import CommentContainer from '../CommentContainer/CommentContainer';
+import SideVideoContainer from '../SideVideoContainer/SideVideoContainer';
+import './Main.scss';
 
 const Main = ({mainVideoDetails, newCommentHandler, deleteCommentHandler}) => {
     return (

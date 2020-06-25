@@ -1,5 +1,5 @@
 import React from 'react';
-import './timestamp.scss';
+import './Timestamp.scss';
 
 const Timestamp = ({timestamp}) => {
     let commentTime = timestamp;

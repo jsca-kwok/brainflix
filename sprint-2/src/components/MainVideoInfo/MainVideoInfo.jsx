@@ -1,7 +1,7 @@
 import React from 'react';
-import VideoHeading from '../video-heading/VideoHeading';
-import VideoDescription from '../video-description/VideoDescription';
-import CommentInput from '../comment-input/CommentInput';
+import VideoHeading from '../VideoHeading/VideoHeading';
+import VideoDescription from '../VideoDescription/VideoDescription';
+import CommentInput from '../CommentInput/CommentInput';
 
 const MainVideoInfo = ({mainVideoDetails, newCommentHandler}) => {
     return (

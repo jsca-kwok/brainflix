@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../components/header/Header';
-import './upload.scss';
+import Header from '../../components/Header/Header';
+import './Upload.scss';
 
 const Upload = () => {
     return (

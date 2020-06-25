@@ -1,8 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
-import Header from '../../components/header/Header';
-import Hero from '../../components/hero/Hero';
-import Main from '../../components/main/Main';
+import Header from '../../components/Header/Header';
+import Hero from '../../components/Hero/Hero';
+import Main from '../../components/Main/Main';
 
 const url = 'https://project-2-api.herokuapp.com/';
 const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";

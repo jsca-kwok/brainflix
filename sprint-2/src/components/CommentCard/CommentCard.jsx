@@ -1,6 +1,6 @@
 import React from 'react';
-import '../comment-card/comment-card.scss';
-import Timestamp from '../timestamp/Timestamp';
+import '../CommentCard/comment-card.scss';
+import Timestamp from '../Timestamp/Timestamp';
 
 const CommentCard = ({name, timestamp, comment, deleteCommentHandler, deleteVideoId, deleteCommentId}) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './header.scss';
+import './Header.scss';
 import logo from '../../assets/logo/logo-brainflix.svg';
 import buttonIcon from '../../assets/icons/svg/icon-upload.svg';
 

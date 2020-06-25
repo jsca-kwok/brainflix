@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentCard from '../comment-card/CommentCard';
-import '../comment-container/comment-container.scss';
+import CommentCard from '../CommentCard/CommentCard';
+import '../CommentContainer/comment-container.scss';
 
 const CommentContainer = ({mainVideoDetails, deleteCommentHandler}) => {
     return (

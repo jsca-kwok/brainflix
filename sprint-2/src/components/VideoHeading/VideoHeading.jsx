@@ -1,8 +1,8 @@
 import React from 'react';
-import './video-heading.scss';
+import './VideoHeading.scss';
 import viewsIcon from '../../assets/icons/svg/icon-views.svg';
 import likesIcon from '../../assets/icons/svg/icon-likes.svg';
-import Timestamp from '../timestamp/Timestamp';
+import Timestamp from '../Timestamp/Timestamp';
 
 const VideoHeading = ({title, channel, timestamp, views, likes}) => {
     return (

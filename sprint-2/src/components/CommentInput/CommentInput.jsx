@@ -1,5 +1,5 @@
 import React from 'react';
-import './comment-input.scss';
+import './CommentInput.scss';
 
 const CommentInput = ({commentCount, newCommentHandler, videoId}) => {
     return (

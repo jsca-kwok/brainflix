@@ -1,8 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import '../side-video-container/side-video-container.scss';
-import SideVideo from '../side-video/SideVideo';
+import '../SideVideoContainer/side-video-container.scss';
+import SideVideo from '../SideVideo/SideVideo';
 
 const url = 'https://project-2-api.herokuapp.com/';
 const api_key = "?api_key=bf361905-c793-4e92-b572-59f0a1f4735a";
