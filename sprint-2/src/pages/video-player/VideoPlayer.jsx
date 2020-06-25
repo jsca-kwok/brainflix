@@ -5,7 +5,7 @@ import Hero from '../../components/hero/Hero';
 import Main from '../../components/main/Main';
 
 const url = 'https://project-2-api.herokuapp.com/';
-const api_key = "?api_key=bf361905-c793-4e92-b572-59f0a1f4735a";
+const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";
 const defaultVideoId = "/1af0jruup5gu";
 
 class VideoPlayer extends React.Component {
@@ -46,15 +46,37 @@ class VideoPlayer extends React.Component {
 
   postNewComment = (e, videoId) => {
     e.preventDefault();
-    console.log('clicked')
     Axios
-    .post(`${url}videos/${videoId.videoId}/comments${api_key}`,
+    .post(`${url}videos/${videoId}/comments${api_key}`,
     {
       name: 'Mohan Muruge',
       comment: e.target.comment.value
     })
     .then(res => {
-      this.setState({showcaseVid: [...this.state.showcaseVid, res.data]})
+      // make a copy of the current state to prevent direct changes to state
+      const postCommentCopyState = {...this.state.showcaseVid};
+      // push new comment response into state copy
+      postCommentCopyState.comments.push(res.data);
+      // setState with modified copy of state 
+      this.setState({showcaseVid: postCommentCopyState});
+    })
+    .catch(err => console.error(err))
+    // clear input field
+    e.target.reset();
+  }
+
+  deleteComment = (videoId, commentId) => {
+    Axios
+    .delete(`${url}videos/${videoId}/comments/${commentId}${api_key}`)
+    .then(res => {
+      // make a copy of the current state to prevent direct changes to state
+      const deleteCommentCopyState = {...this.state.showcaseVid};
+      // create new comment array without deleted comment via filtering by id
+      const removedCommentArray = deleteCommentCopyState.comments.filter(comment => comment.id !== commentId);
+      // replace comments array in state copy with filtered array
+      deleteCommentCopyState.comments = removedCommentArray;
+      // set state with modified copy of state
+      this.setState({showcaseVid: deleteCommentCopyState});
     })
     .catch(err => console.error(err))
   }
@@ -63,10 +85,13 @@ class VideoPlayer extends React.Component {
     return (
       <div>
         <Header />
-        <Hero src={this.state.showcaseVid.video+api_key} poster={this.state.showcaseVid.image} duration={this.state.showcaseVid.duration} />
+        <Hero 
+          src={this.state.showcaseVid.video+api_key} 
+          poster={this.state.showcaseVid.image} 
+          duration={this.state.showcaseVid.duration} />
         {/* only render <Main> component if comments array is not undefined (i.e. state has been seeded) */}
         {
-          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} /> : null
+          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} deleteCommentHandler={this.deleteComment}/> : null
         }
       </div>
     );

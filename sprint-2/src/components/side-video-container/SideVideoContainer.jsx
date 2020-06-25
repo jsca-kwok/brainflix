@@ -34,7 +34,11 @@ class SideVideoContainer extends React.Component {
               }).map((item) => {
                   return (
                       <Link to={`/videos/${item.id}`} key={item.id}>
-                          <SideVideo title={item.title} channel={item.channel} image={item.image} id={item.id}/>
+                          <SideVideo 
+                            title={item.title} 
+                            channel={item.channel} 
+                            image={item.image} 
+                            id={item.id}/>
                       </Link>
                   )
               })
