@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideoDescription.scss';
+import './video-description.scss';
 
 const VideoDescription = ({description}) => {
     return (

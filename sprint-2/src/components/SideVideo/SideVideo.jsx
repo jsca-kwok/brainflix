@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideVideo.scss';
+import './side-video.scss';
 
 const SideVideo = ({image, title, channel}) => {
     return (

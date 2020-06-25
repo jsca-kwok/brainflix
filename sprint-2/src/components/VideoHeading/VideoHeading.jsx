@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideoHeading.scss';
+import './video-heading.scss';
 import viewsIcon from '../../assets/icons/svg/icon-views.svg';
 import likesIcon from '../../assets/icons/svg/icon-likes.svg';
 import Timestamp from '../Timestamp/Timestamp';

@@ -50,5 +50,8 @@
         width: 15px;
         align-self: flex-end;
         padding-bottom: 10px;
+        @include desktop {
+            margin-right: 10px;
+        }
     }
 }
