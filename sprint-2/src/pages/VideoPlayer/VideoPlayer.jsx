@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import Main from '../../components/Main/Main';
 
-const url = 'https://project-2-api.herokuapp.com/';
+const url = 'https://project-2-api.herokuapp.com/videos';
 const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";
 const defaultVideoId = "/1af0jruup5gu";
 
@@ -15,7 +15,7 @@ class VideoPlayer extends React.Component {
   // seed
   componentDidMount() {
     Axios
-    .get(`${url}videos${defaultVideoId}${api_key}`)
+    .get(`${url}${defaultVideoId}${api_key}`)
     .then(res => {
       this.setState({showcaseVid: res.data})
     })
@@ -27,18 +27,21 @@ class VideoPlayer extends React.Component {
     // if on root path (no id param), display default video - added && condition to prevent infinite looping
     if (!this.props.match.params.id && (this.props.match.params.id !== prevProps.match.params.id)) {
       Axios
-      .get(`${url}videos${defaultVideoId}${api_key}`)
+      .get(`${url}${defaultVideoId}${api_key}`)
       .then(res => {
         this.setState({showcaseVid: res.data})
+        // scroll to top
+        window.scrollTo(0,0);
       })
       .catch(err => console.error(err))
     }
     // if current path is different than previous path, update state with new video info
     else if (this.props.match.params.id !== prevProps.match.params.id) {
       Axios
-      .get(`${url}videos/${this.props.match.params.id}${api_key}`)
+      .get(`${url}/${this.props.match.params.id}${api_key}`)
       .then(res => {
         this.setState({showcaseVid: res.data});
+        window.scrollTo(0,0);
       }) 
       .catch(err => console.error(err))
     } 
@@ -47,7 +50,7 @@ class VideoPlayer extends React.Component {
   postNewComment = (e, videoId) => {
     e.preventDefault();
     Axios
-    .post(`${url}videos/${videoId}/comments${api_key}`,
+    .post(`${url}/${videoId}/comments${api_key}`,
     {
       name: 'Mohan Muruge',
       comment: e.target.comment.value
@@ -67,8 +70,8 @@ class VideoPlayer extends React.Component {
 
   deleteComment = (videoId, commentId) => {
     Axios
-    .delete(`${url}videos/${videoId}/comments/${commentId}${api_key}`)
-    .then(res => {
+    .delete(`${url}/${videoId}/comments/${commentId}${api_key}`)
+    .then(() => {
       // make a copy of the current state to prevent direct changes to state
       const deleteCommentCopyState = {...this.state.showcaseVid};
       // create new comment array without deleted comment via filtering by id

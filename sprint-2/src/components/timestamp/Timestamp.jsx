@@ -32,7 +32,8 @@ const Timestamp = ({timestamp}) => {
             minutes = Math.floor(secondsDiff / 60);
             return <p className="main-video__timestamp">{minutes} minutes ago</p>
         default:
-            seconds = Math.floor(secondsDiff);
+            // +1 since Math.floor would round down value to -1 upon posting
+            seconds = Math.floor(secondsDiff) + 1;
             return <p className="main-video__timestamp">{seconds} seconds ago</p>
     }
 }

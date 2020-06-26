@@ -4,9 +4,7 @@ import VideoPlayer from './pages/VideoPlayer/VideoPlayer';
 import Upload from './pages/Upload/Upload';
 
 
-class App extends React.Component {
-
-  render() {
+const App = () => {
     return (
       <BrowserRouter>
         <Switch>
@@ -16,7 +14,6 @@ class App extends React.Component {
         </Switch>
       </BrowserRouter>
     );
-  }
 }
 
 export default App;
