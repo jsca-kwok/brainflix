@@ -1,0 +1,59 @@
+@import '../../global-styles/styles.scss';
+
+.main-video {
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px $borderColor solid;
+        width: 100%;
+        margin: 0 $mobileMargin;
+        @include tablet {
+            margin-top: $tabletMargin 0 0 $tabletMargin;
+            width: 97%;
+        }
+    }
+    &__title {
+        @include mobileHeaderFont;
+        @include tablet {
+            @include tabletSecondaryHeaderFont;
+            margin-bottom: 0;
+        }
+    }
+    &__upload-detail-container {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__upload-details {
+        display: flex;
+        align-items: center;
+    }
+    &__channel {
+        margin-right: $mobileSmallMargin;
+        font-weight: 700;
+    }
+    &__timestamp {
+        color: $labelTextColor;
+    }
+    &__stats {
+        display: flex;
+        padding-bottom: 8px;
+        align-items: center;
+        padding-right: 20px;
+    }
+    &__views-icon {
+        height: 8px;
+        margin-right: $mobileSmallMargin;
+        @include tablet {
+            height: 16px;
+        }
+    }
+    &__likes-icon {
+        height: 8px;
+        margin: 0 8px 0 25px;
+        @include tablet {
+            height: 16px;
+        }
+    }
+}

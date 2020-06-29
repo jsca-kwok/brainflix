@@ -1,0 +1,71 @@
+// media queries
+@mixin tablet {
+    @media (min-width: $tabletWidth) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktopWidth) {
+        @content;
+    }
+}
+
+// button styling
+@mixin button {
+    height: 48px;
+    width: 100%;
+    margin: 8px 8px 0 0;
+    background-color: $buttonBackgroundColor;
+    color: $buttonFontColor;
+    font-weight: 700;
+    border-radius: 4px;
+    border: none;
+}
+
+// typography
+@mixin mobileHeaderFont {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@mixin mobileSubheaderFont {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@mixin mobileParagraphFont {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+@mixin mobileLabelsFont {
+    font-weight: normal;
+    font-size: 12px;
+    color: $labelTextColor;
+}
+
+@mixin tabletMainHeaderFont {
+    font-weight: 700;
+    font-size: 60px;
+}
+
+@mixin tabletSecondaryHeaderFont {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+@mixin tabletSubheaderFont {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@mixin tabletParagraphFont {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+@mixin tabletLabelsFont {
+    font-weight: normal;
+    font-size: 12px;
+    color: $labelTextColor;
+}

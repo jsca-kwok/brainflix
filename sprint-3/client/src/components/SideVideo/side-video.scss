@@ -1,0 +1,58 @@
+@import '../../global-styles/styles.scss';
+
+.side-video {
+    margin: 0 $mobileMargin $mobileLargeMargin $mobileMargin;
+    display: flex;
+    @include tablet {
+        margin: 0 $tabletMargin $tabletMargin $tabletMargin;
+    }
+    @include desktop {
+        width: 280px;
+        margin: 0 0 $tabletMargin 0;
+    }
+    &__thumbnail-container {
+        height: 70px;
+        max-width: 120px;
+        margin-right: $mobileMargin;
+        border-radius: 4px;
+        overflow: hidden;
+        @include tablet {
+            height: 80px;
+            max-width: 120px;
+        }
+        @include desktop {
+            height: 70px;
+            width: 150px;
+        }
+    }
+    &__thumbnail {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    &__text-container {
+        width: 80%;
+        @include tablet {
+            width: 25%;
+        }
+        @include desktop {
+            width: 100%;
+        }
+    }
+    &__title {
+        margin: 0;
+        @include mobileSubheaderFont;
+        @include tablet {
+            @include tabletSubheaderFont;
+        }
+    }
+    &__channel {
+        @include mobileParagraphFont;
+        @include tablet {
+            @include tabletParagraphFont;
+        }
+        @include desktop {
+            margin: 0;
+        }
+    }
+}
