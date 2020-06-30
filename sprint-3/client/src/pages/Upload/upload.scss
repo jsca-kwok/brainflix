@@ -131,11 +131,27 @@
         background-color: $buttonFontColor;
         color: $buttonBackgroundColor;
         @include tablet {
-            margin: 0 $tabletMargin;
             width: 20%;
         }
         @include desktop {
             width: 15%;
+        }
+    }
+    &__success {
+        position: absolute;
+        padding: 100px;
+        border-radius: 15px;
+        background-color: $iconBackgroundColor;
+        color: white;
+        @include mobileHeaderFont;
+        bottom: 300px;
+        left: 30px;
+        @include tablet {
+            left: 250px;
+        }
+        @include desktop {
+            left: 400px;
+            bottom: 400px;
         }
     }
 }
