@@ -1,10 +1,10 @@
 import React from 'react';
 import './video-heading.scss';
 import viewsIcon from '../../assets/icons/svg/icon-views.svg';
-import likesIcon from '../../assets/icons/svg/icon-likes.svg';
 import Timestamp from '../Timestamp/Timestamp';
+import Likes from '../Likes/Likes';
 
-const VideoHeading = ({title, channel, timestamp, views, likes}) => {
+const VideoHeading = ({title, channel, timestamp, views, likes, likeVideo, videoId}) => {
     return (
         <div className="main-video__heading">
             <h2 className="main-video__title">{title}</h2>
@@ -14,10 +14,9 @@ const VideoHeading = ({title, channel, timestamp, views, likes}) => {
                     <Timestamp timestamp={timestamp}/>
                 </div>
                 <div className="main-video__stats">
-                    <img className="main-video__views-icon" src={viewsIcon} alt="" />
+                    <img className="main-video__views-icon" src={viewsIcon} alt="views" />
                     <p>{views}</p>
-                    <img className="main-video__likes-icon" src={likesIcon} alt="" />
-                    <p>{likes}</p>
+                    <Likes likes={likes} likeVideo={likeVideo} videoId={videoId} />
                 </div>
             </div>
         </div>

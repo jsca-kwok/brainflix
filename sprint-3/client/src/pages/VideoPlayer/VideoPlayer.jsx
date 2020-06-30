@@ -85,6 +85,18 @@ class VideoPlayer extends React.Component {
     .catch(err => console.error(err))
   }
 
+  likeVideo = (videoId) => {
+    Axios
+    .put(`${server}/${videoId}/likes`)
+    .then(() => {
+      const likeVideoCopyState = {...this.state.showcaseVid};
+      let likes = parseInt(likeVideoCopyState.likes);
+      likes++;
+      likeVideoCopyState.likes = likes;
+      this.setState({showcaseVid: likeVideoCopyState});
+    })
+  }
+
   render() {
     return (
       <div>
@@ -95,7 +107,7 @@ class VideoPlayer extends React.Component {
           duration={this.state.showcaseVid.duration} />
         {/* only render <Main> component if comments array is not undefined (i.e. state has been seeded) */}
         {
-          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} deleteCommentHandler={this.deleteComment}/> : null
+          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} deleteCommentHandler={this.deleteComment} likeVideo={this.likeVideo} /> : null
         }
       </div>
     );

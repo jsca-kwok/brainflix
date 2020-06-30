@@ -3,7 +3,7 @@ import VideoHeading from '../VideoHeading/VideoHeading';
 import VideoDescription from '../VideoDescription/VideoDescription';
 import CommentInput from '../CommentInput/CommentInput';
 
-const MainVideoInfo = ({mainVideoDetails, newCommentHandler}) => {
+const MainVideoInfo = ({mainVideoDetails, newCommentHandler, likeVideo}) => {
     return (
         <div className="main-video">
             <VideoHeading 
@@ -11,7 +11,9 @@ const MainVideoInfo = ({mainVideoDetails, newCommentHandler}) => {
                 channel={mainVideoDetails.channel} 
                 timestamp={mainVideoDetails.timestamp} 
                 views={mainVideoDetails.views} 
-                likes={mainVideoDetails.likes} />
+                likes={mainVideoDetails.likes} 
+                videoId={mainVideoDetails.id}
+                likeVideo={likeVideo} />
             <VideoDescription description={mainVideoDetails.description} />
             <CommentInput 
                 videoId={mainVideoDetails.id} 

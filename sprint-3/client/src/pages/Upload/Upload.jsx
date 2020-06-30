@@ -30,9 +30,6 @@ class Upload extends React.Component {
             timestamp: Date.now(),
             comments: []
         })
-        .then(res => {
-            console.log(res)
-        })
         .catch(err => {
             console.error(err);
         })

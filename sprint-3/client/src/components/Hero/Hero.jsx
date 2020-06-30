@@ -5,6 +5,7 @@ import screenIcon from '../../assets/icons/svg/icon-fullscreen.svg';
 import volumeIcon from '../../assets/icons/svg/icon-volume.svg';
 
 const Hero = ({src, poster, duration}) => {
+
     return (
         <div className="hero">
             <video className="hero__video" src={src} poster={poster}></video>

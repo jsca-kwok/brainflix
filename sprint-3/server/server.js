@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const data = require('./data.json');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // GET /videos 
@@ -36,10 +36,32 @@ app.post('/videos', (req, res) => {
     return res.status(201).send(videoList);
 })
 
+// PUT /videos/:videoId/likes
+app.put('/videos/:videoId/likes', (req, res) => {
+    const videoId = req.body.id;
+    const videoDetails = data.slice().pop();
+    videoDetails.map(video => {
+        video.id === videoId ? video.likes++ : null
+    })
+    return res.status(201).send(videoDetails);
+})
+
+// POST /videos/:id/comments
+// app.post('/videos/:id/comments', (req, res) => {
+//     const videoId = req.params.id;
+//     const videoDetails = data.slice().pop();
+//     const video = videoDetails.filter(video => {
+//         return video.id === videoId
+//     }).pop();
+//     video.comments.push(req.body);
+//     console.log(req.body);
+//     return res.status(201).send(video);
+// })
+
 
 app.listen(8080, (err) => {
     if (err) {
-        console.log(error)
+        console.log(error);
         return;
     }
     console.log('running on port 8080');
