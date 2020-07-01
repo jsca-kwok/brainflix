@@ -72,11 +72,16 @@
     }
     &__slider {
         background-color: black;
-        height: 4px;
-        width: 80%;
-        border-radius: 4px;
-        @include tablet {
-            width: 80%;
+        height: 3px;
+        width: 82%;
+        border-radius: 5px;
+        &::-webkit-progress-bar {
+            background-color: black;
+            border-radius: 5px;
+        }
+        &::-webkit-progress-value {
+            background-color: $buttonBackgroundColor;
+            border-radius: 5px;
         }
     }
     &__slider-time {
@@ -86,8 +91,11 @@
             color: white;
             font-size: 10px;
             font-weight: 600;
-            margin-left: $tabletMargin;
+            margin-left: $mobileMargin;
         }
+    }
+    &__current-time {
+        @extend .hero__slider-time;
     }
     &__settings-container {
         background-color: $iconBackgroundColor;

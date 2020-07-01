@@ -112,6 +112,13 @@ class VideoPlayer extends React.Component {
     })
   }
 
+  // to toggle play/pause button on video
+  playState = (status) => {
+    const playVideoCopyState = {...this.state.showcaseVid};
+    playVideoCopyState.playing = status;
+    this.setState({showcaseVid: playVideoCopyState});
+  }
+
   render() {
     return (
       <div>
@@ -119,7 +126,9 @@ class VideoPlayer extends React.Component {
         <Hero 
           src={this.state.showcaseVid.video+api_key} 
           poster={this.state.showcaseVid.image} 
-          duration={this.state.showcaseVid.duration} />
+          duration={this.state.showcaseVid.duration}
+          playing={this.state.showcaseVid.playing}
+          playState={this.playState} />
         {/* only render <Main> component if comments array is not undefined (i.e. state has been seeded) */}
         {
           this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} deleteCommentHandler={this.deleteComment} likeVideo={this.likeVideo} /> : null
