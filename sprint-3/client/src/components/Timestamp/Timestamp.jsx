@@ -15,7 +15,11 @@ const Timestamp = ({timestamp}) => {
         case secondsDiff > 3153600:
             years = Math.floor(secondsDiff/31536000);
             months = Math.floor((secondsDiff % 31536000) / 2592000);
-            return <p className="main-video__timestamp">{years} year and {months} months ago</p>;
+            if (years > 1) {
+                return <p className="main-video__timestamp">{years} years and {months} months ago</p>;
+            } else {
+                return <p className="main-video__timestamp">{years} year and {months} months ago</p>;
+            }
         case secondsDiff > 2592000:
             months = Math.floor(secondsDiff / 2592000);
             weeks = Math.floor((secondsDiff % 2592000) / 604800);

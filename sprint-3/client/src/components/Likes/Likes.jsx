@@ -3,7 +3,6 @@ import likesIcon from '../../assets/icons/svg/icon-likes.svg';
 import likedIcon from '../../assets/icons/png/liked-icon.png';
 
 const Likes = ({likes, likeVideo, videoId}) => {
-    console.log(window);
     // format number of likes with comma
     const formattedLikes = parseInt(likes).toLocaleString();
 

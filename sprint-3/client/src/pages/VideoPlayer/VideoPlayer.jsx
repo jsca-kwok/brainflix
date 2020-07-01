@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import Main from '../../components/Main/Main';
@@ -51,10 +52,13 @@ class VideoPlayer extends React.Component {
   postNewComment = (e, videoId) => {
     e.preventDefault();
     Axios
-    .post(`${url}/${videoId}/comments${api_key}`,
+    .post(`${server}/${videoId}/comments`,
     {
       name: 'Mohan Muruge',
-      comment: e.target.comment.value
+      comment: e.target.comment.value,
+      id: uuidv4(),
+      likes: 0,
+      timestamp: Date.now()
     })
     .then(res => {
       // make a copy of the current state to prevent direct changes to state
@@ -71,7 +75,7 @@ class VideoPlayer extends React.Component {
 
   deleteComment = (videoId, commentId) => {
     Axios
-    .delete(`${url}/${videoId}/comments/${commentId}${api_key}`)
+    .delete(`${server}/${videoId}/comments/${commentId}`)
     .then(() => {
       // make a copy of the current state to prevent direct changes to state
       const deleteCommentCopyState = {...this.state.showcaseVid};
