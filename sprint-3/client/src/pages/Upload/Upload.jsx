@@ -25,6 +25,7 @@ class Upload extends React.Component {
             description: e.target.description.value,
             views: 0,
             likes: 0,
+            liked: false,
             duration: "2:37",
             video: 'https://project-2-api.herokuapp.com/stream',
             timestamp: Date.now(),

@@ -4,7 +4,7 @@ import viewsIcon from '../../assets/icons/svg/icon-views.svg';
 import Timestamp from '../Timestamp/Timestamp';
 import Likes from '../Likes/Likes';
 
-const VideoHeading = ({title, channel, timestamp, views, likes, likeVideo, videoId}) => {
+const VideoHeading = ({title, channel, timestamp, views, likes, liked, likeVideo, videoId}) => {
     return (
         <div className="main-video__heading">
             <h2 className="main-video__title">{title}</h2>
@@ -16,7 +16,7 @@ const VideoHeading = ({title, channel, timestamp, views, likes, likeVideo, video
                 <div className="main-video__stats">
                     <img className="main-video__views-icon" src={viewsIcon} alt="views" />
                     <p>{views}</p>
-                    <Likes likes={likes} likeVideo={likeVideo} videoId={videoId} />
+                    <Likes likes={likes} liked={liked} likeVideo={likeVideo} videoId={videoId} />
                 </div>
             </div>
         </div>

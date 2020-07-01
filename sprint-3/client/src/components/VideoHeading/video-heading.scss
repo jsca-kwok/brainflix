@@ -56,4 +56,11 @@
             height: 16px;
         }
     }
+    &__liked-icon {
+        height: 10px;
+        margin: 0 8px 0 25px;
+        @include tablet {
+            height: 16px;
+        }
+    }
 }

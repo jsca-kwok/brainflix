@@ -12,6 +12,7 @@ const MainVideoInfo = ({mainVideoDetails, newCommentHandler, likeVideo}) => {
                 timestamp={mainVideoDetails.timestamp} 
                 views={mainVideoDetails.views} 
                 likes={mainVideoDetails.likes} 
+                liked={mainVideoDetails.liked}
                 videoId={mainVideoDetails.id}
                 likeVideo={likeVideo} />
             <VideoDescription description={mainVideoDetails.description} />

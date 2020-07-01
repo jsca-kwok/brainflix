@@ -92,11 +92,23 @@ class VideoPlayer extends React.Component {
     Axios
     .put(`${server}/${videoId}/likes`)
     .then(() => {
-      const likeVideoCopyState = {...this.state.showcaseVid};
-      let likes = parseInt(likeVideoCopyState.likes);
-      likes++;
-      likeVideoCopyState.likes = likes;
-      this.setState({showcaseVid: likeVideoCopyState});
+      if (this.state.showcaseVid.liked === false) {
+        console.log(this.state.liked);
+        const likeVideoCopyState = {...this.state.showcaseVid};
+        let likes = parseInt(likeVideoCopyState.likes);
+        likes++;
+        likeVideoCopyState.likes = likes;
+        likeVideoCopyState.liked = true;
+        this.setState({showcaseVid: likeVideoCopyState});
+      } else {
+        console.log(this.state.showcaseVid.liked);
+        const likeVideoCopyState = {...this.state.showcaseVid};
+        let likes = parseInt(likeVideoCopyState.likes);
+        likes--;
+        likeVideoCopyState.likes = likes;
+        likeVideoCopyState.liked = false;
+        this.setState({showcaseVid: likeVideoCopyState});
+      }
     })
   }
 
