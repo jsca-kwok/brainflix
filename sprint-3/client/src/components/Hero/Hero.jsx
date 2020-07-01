@@ -11,6 +11,7 @@ const Hero = ({src, poster, duration, playing, playState}) => {
     const video = document.getElementById('video');
     const progressBar = document.getElementById('progress');
     const currentTime = document.getElementById('currentTime');
+    const scrubber = document.getElementById('scrubber');
 
     const togglePlay = (e) => {
         if (playing === false) {
@@ -66,6 +67,7 @@ const Hero = ({src, poster, duration, playing, playState}) => {
                     }
                 </div>
                 <div className="hero__scrubber-container">
+                    {/* <img className="hero__scrubber" src={scrubberIcon} id="scrubber" alt="scrubber" /> */}
                     <progress id="progress" className="hero__slider" value="0" min="0" />
                     <p className="hero__slider-time">
                         <span className="hero__current-time" id="currentTime"></span> / {duration}

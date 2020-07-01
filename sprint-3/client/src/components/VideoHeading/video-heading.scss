@@ -43,21 +43,21 @@
         padding-right: 20px;
     }
     &__views-icon {
-        height: 8px;
+        height: 10px;
         margin-right: $mobileSmallMargin;
         @include tablet {
             height: 16px;
         }
     }
     &__likes-icon {
-        height: 8px;
+        height: 10px;
         margin: 0 8px 0 25px;
         @include tablet {
             height: 16px;
         }
     }
     &__liked-icon {
-        height: 10px;
+        height: 12px;
         margin: 0 8px 0 25px;
         @include tablet {
             height: 16px;

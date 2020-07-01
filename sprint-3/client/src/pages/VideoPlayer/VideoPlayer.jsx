@@ -15,12 +15,23 @@ class VideoPlayer extends React.Component {
 
   // seed
   componentDidMount() {
-    Axios
-    .get(`${server}${defaultVideoId}`)
-    .then(res => {
-      this.setState({showcaseVid: res.data})
-    })
-    .catch(err => console.error(err))
+    // conditionals to prevent rendering of default vid during refresh on /videos/:id 
+    if (!this.props.match.params.id) {
+      Axios
+      .get(`${server}${defaultVideoId}`)
+      .then(res => {
+        this.setState({showcaseVid: res.data})
+      })
+      .catch(err => console.error(err))
+    } else {
+      Axios
+      .get(`${server}/${this.props.match.params.id}`)
+      .then(res => {
+        this.setState({showcaseVid: res.data});
+        window.scrollTo(0,0);
+      }) 
+      .catch(err => console.error(err))
+    }
   }
 
   // to update main video displayed
@@ -131,7 +142,13 @@ class VideoPlayer extends React.Component {
           playState={this.playState} />
         {/* only render <Main> component if comments array is not undefined (i.e. state has been seeded) */}
         {
-          this.state.showcaseVid.comments !== undefined ? <Main mainVideoDetails={this.state.showcaseVid} newCommentHandler={this.postNewComment} deleteCommentHandler={this.deleteComment} likeVideo={this.likeVideo} /> : null
+          this.state.showcaseVid.comments !== undefined ? 
+          <Main 
+            mainVideoDetails={this.state.showcaseVid} 
+            newCommentHandler={this.postNewComment} 
+            deleteCommentHandler={this.deleteComment} 
+            likeVideo={this.likeVideo} /> 
+          : null
         }
       </div>
     );

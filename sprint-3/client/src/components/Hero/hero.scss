@@ -70,6 +70,15 @@
             width: 80%;
         }
     }
+    // &__scrubber {
+    //     display: none;
+    //     @include tablet {
+    //         display: initial;
+    //         position: absolute;
+    //         height: 15px;
+    //         top: 8px;
+    //     }
+    // }
     &__slider {
         background-color: black;
         height: 3px;
@@ -91,7 +100,7 @@
             color: white;
             font-size: 10px;
             font-weight: 600;
-            margin-left: $mobileMargin;
+            margin-left: $mobileSmallMargin;
         }
     }
     &__current-time {
