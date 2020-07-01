@@ -7,7 +7,7 @@ const CommentInput = ({commentCount, newCommentHandler, videoId}) => {
             <p className="comment__count">{commentCount} Comments</p>
             <div className="comment__input-container">
                 <div className="comment__image-container">
-                    <div className="comment__image comment__image-user" alt="profile picture"></div>
+                    <div className="comment__image comment__image-user-input" alt="profile picture"></div>
                 </div>
                 <form onSubmit={(e) => {newCommentHandler(e, videoId)}} className="comment__form">
                     <h3 className="comment__heading">JOIN THE CONVERSATION</h3>

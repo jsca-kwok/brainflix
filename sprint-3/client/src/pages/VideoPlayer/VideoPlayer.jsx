@@ -5,7 +5,6 @@ import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import Main from '../../components/Main/Main';
 
-const url = 'https://project-2-api.herokuapp.com/videos';
 const server = 'http://localhost:8080/videos'
 const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";
 const defaultVideoId = "/1af0jruup5gu";

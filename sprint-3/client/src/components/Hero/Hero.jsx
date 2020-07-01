@@ -37,9 +37,14 @@ const Hero = ({src, poster, duration}) => {
         video.requestFullscreen();
     }
 
+    const endHandler = () => {
+        video.currentTime = 0;
+        video.load();
+    }
+
     return (
         <div className="hero">
-            <video id='video' className="hero__video" src={src} poster={poster}></video>
+            <video id='video' className="hero__video" src={src} poster={poster} onEnded={() => {endHandler()}}></video>
             <div className="hero__controls">
                 <div className="hero__play-container">
                     <img onClick={(e) => {togglePlay(e)}} className="hero__controls-play" src={playIcon} alt="play button"/>

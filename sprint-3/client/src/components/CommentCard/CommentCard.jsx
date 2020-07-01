@@ -6,7 +6,10 @@ const CommentCard = ({name, timestamp, comment, deleteCommentHandler, deleteVide
     return (
         <div className="comment__card">
             <div className="comment__image-container">
-                <div className="comment__image comment__image-default"></div>
+                {/* show user profile icon if comment belongs to current user */}
+                {
+                    name === 'Mohan Muruge' ? <div className="comment__image comment__image-user" alt="profile picture"></div> : <div className="comment__image comment__image-default"></div>
+                }
             </div>
             <div className="comment__text-container">
                 <div className="comment__heading-container">

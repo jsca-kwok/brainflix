@@ -9,6 +9,11 @@
     &__image-default {
         margin-top: $mobileLargeMargin;
     }
+    &__image-user {
+        background-image: url("/assets/images/mohan-muruge.jpg");
+        background-size: cover;
+        margin-top: $mobileLargeMargin;
+    }
     &__text-container {
         margin-top: $mobileSmallMargin;
         width: 100%;
