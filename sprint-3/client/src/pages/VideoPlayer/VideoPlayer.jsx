@@ -5,33 +5,32 @@ import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import Main from '../../components/Main/Main';
 
-const server = 'http://localhost:8080/videos'
+const server = 'http://localhost:8080/videos/'
 const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";
 const defaultVideoId = "/1af0jruup5gu";
 
 class VideoPlayer extends React.Component {
 
-  state={showcaseVid: []};
+  state={showcaseVid: [], nextVideos: []};
 
   // seed
   componentDidMount() {
-    // conditionals to prevent rendering of default vid during refresh on /videos/:id 
-    if (!this.props.match.params.id) {
-      Axios
-      .get(`${server}${defaultVideoId}`)
-      .then(res => {
-        this.setState({showcaseVid: res.data})
-      })
-      .catch(err => console.error(err))
-    } else {
-      Axios
-      .get(`${server}/${this.props.match.params.id}`)
-      .then(res => {
-        this.setState({showcaseVid: res.data});
-        window.scrollTo(0,0);
-      }) 
-      .catch(err => console.error(err))
-    }
+    Axios
+    .get(server)
+    .then(res => {
+      this.setState({nextVideos: res.data});
+      // condition to prevent default video displaying during /video/:id page refresh
+      if (!this.props.match.params.id) {
+        return Axios.get(`${server}${this.state.nextVideos[0].id}`);
+      } else {
+        return Axios.get(`${server}${this.props.match.params.id}`);
+      }
+    })
+    .then(res => {
+      this.setState({showcaseVid: res.data});
+      window.scrollTo(0,0);
+    })
+    .catch(err => console.error(err));
   }
 
   // to update main video displayed
@@ -39,7 +38,7 @@ class VideoPlayer extends React.Component {
     // if on root path (no id param), display default video - added && condition to prevent infinite looping
     if (!this.props.match.params.id && (this.props.match.params.id !== prevProps.match.params.id)) {
       Axios
-      .get(`${server}${defaultVideoId}`)
+      .get(`${server}${this.state.nextVideos[0].id}`)
       .then(res => {
         this.setState({showcaseVid: res.data})
         // scroll to top
@@ -50,7 +49,7 @@ class VideoPlayer extends React.Component {
     // if current path is different than previous path, update state with new video info
     else if (this.props.match.params.id !== prevProps.match.params.id) {
       Axios
-      .get(`${server}/${this.props.match.params.id}`)
+      .get(`${server}${this.props.match.params.id}`)
       .then(res => {
         this.setState({showcaseVid: res.data});
         window.scrollTo(0,0);
@@ -62,7 +61,7 @@ class VideoPlayer extends React.Component {
   postNewComment = (e, videoId) => {
     e.preventDefault();
     Axios
-    .post(`${server}/${videoId}/comments`,
+    .post(`${server}${videoId}/comments`,
     {
       name: 'Mohan Muruge',
       comment: e.target.comment.value,
@@ -85,7 +84,7 @@ class VideoPlayer extends React.Component {
 
   deleteComment = (videoId, commentId) => {
     Axios
-    .delete(`${server}/${videoId}/comments/${commentId}`)
+    .delete(`${server}${videoId}/comments/${commentId}`)
     .then(() => {
       // make a copy of the current state to prevent direct changes to state
       const deleteCommentCopyState = {...this.state.showcaseVid};
@@ -101,7 +100,7 @@ class VideoPlayer extends React.Component {
 
   likeVideo = (videoId) => {
     Axios
-    .put(`${server}/${videoId}/likes`)
+    .put(`${server}${videoId}/likes`)
     .then(() => {
       if (this.state.showcaseVid.liked === false) {
         console.log(this.state.liked);
@@ -147,7 +146,8 @@ class VideoPlayer extends React.Component {
             mainVideoDetails={this.state.showcaseVid} 
             newCommentHandler={this.postNewComment} 
             deleteCommentHandler={this.deleteComment} 
-            likeVideo={this.likeVideo} /> 
+            likeVideo={this.likeVideo}
+            nextVideos={this.state.nextVideos} /> 
           : null
         }
       </div>

@@ -4,7 +4,7 @@ import CommentContainer from '../CommentContainer/CommentContainer';
 import SideVideoContainer from '../SideVideoContainer/SideVideoContainer';
 import './main.scss';
 
-const Main = ({mainVideoDetails, newCommentHandler, deleteCommentHandler, likeVideo}) => {
+const Main = ({mainVideoDetails, newCommentHandler, deleteCommentHandler, likeVideo, nextVideos}) => {
     return (
       <div className="main">
         <div className="main__video-details">
@@ -12,7 +12,7 @@ const Main = ({mainVideoDetails, newCommentHandler, deleteCommentHandler, likeVi
           <CommentContainer mainVideoDetails={mainVideoDetails} deleteCommentHandler={deleteCommentHandler} />
         </div>
           {/* pass down video id to compare with ids of side videos */}
-          <SideVideoContainer videoId={mainVideoDetails.id}/>
+          <SideVideoContainer videoId={mainVideoDetails.id} nextVideos={nextVideos}/>
       </div>
     );
   }
