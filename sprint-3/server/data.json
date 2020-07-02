@@ -1,5 +1,5 @@
-[
-    [{
+{
+    "videoList": [{
         "id": "1af0jruup5gu",
         "title": "BMX Rampage: 2018 Highlights",
         "channel": "Red Cow",
@@ -53,7 +53,7 @@
         "channel": "Scotty Cranmer",
         "image": "https://i.imgur.com/i6S8m7I.jpg"
     }],
-    [
+    "videoDetails": [
         { 
             "id": "1af0jruup5gu",
             "title": "BMX Rampage: 2018 Highlights",
@@ -388,4 +388,4 @@
             ]
         }
     ]
-]
+}
