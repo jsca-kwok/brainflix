@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const videoRoutes = require('./routes/video-routes/videoRoutes');
 const likesRoutes = require('./routes/likes-routes/likesRoutes');
 const commentRoutes = require('./routes/comments-routes/commentRoutes');
+const viewsRoutes = require('./routes/views-routes/viewsRoutes');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use('/', videoRoutes);
 app.use('/', likesRoutes);
 app.use('/', commentRoutes);
+app.use('/', viewsRoutes);
 
 app.listen(8080, (err) => {
     if (err) {

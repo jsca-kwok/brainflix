@@ -15,7 +15,7 @@ const VideoHeading = ({title, channel, timestamp, views, likes, liked, likeVideo
                 </div>
                 <div className="main-video__stats">
                     <img className="main-video__views-icon" src={viewsIcon} alt="views" />
-                    <p>{views}</p>
+                    <p>{parseInt(views).toLocaleString()}</p>
                     <Likes likes={likes} liked={liked} likeVideo={likeVideo} videoId={videoId} />
                 </div>
             </div>

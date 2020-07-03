@@ -7,7 +7,6 @@ import Main from '../../components/Main/Main';
 
 const server = 'http://localhost:8080/videos/'
 const api_key = "?api_key=ad801a84-f2da-43c8-99dd-5c8729f89d8e";
-const defaultVideoId = "/1af0jruup5gu";
 
 class VideoPlayer extends React.Component {
 
@@ -40,11 +39,12 @@ class VideoPlayer extends React.Component {
       Axios
       .get(`${server}${this.state.nextVideos[0].id}`)
       .then(res => {
-        this.setState({showcaseVid: res.data})
+        this.setState({showcaseVid: res.data});
+        this.addView(this.state.nextVideos[0].id);
         // scroll to top
         window.scrollTo(0,0);
       })
-      .catch(err => console.error(err))
+      .catch(err => console.error(err));
     }
     // if current path is different than previous path, update state with new video info
     else if (this.props.match.params.id !== prevProps.match.params.id) {
@@ -52,9 +52,10 @@ class VideoPlayer extends React.Component {
       .get(`${server}${this.props.match.params.id}`)
       .then(res => {
         this.setState({showcaseVid: res.data});
+        this.addView(this.props.match.params.id);
         window.scrollTo(0,0);
       }) 
-      .catch(err => console.error(err))
+      .catch(err => console.error(err));
     } 
   }
 
@@ -100,25 +101,22 @@ class VideoPlayer extends React.Component {
 
   likeVideo = (videoId) => {
     Axios
-    .put(`${server}${videoId}/likes`)
-    .then(() => {
-      if (this.state.showcaseVid.liked === false) {
-        console.log(this.state.liked);
-        const likeVideoCopyState = {...this.state.showcaseVid};
-        let likes = parseInt(likeVideoCopyState.likes);
-        likes++;
-        likeVideoCopyState.likes = likes;
-        likeVideoCopyState.liked = true;
-        this.setState({showcaseVid: likeVideoCopyState});
-      } else {
-        console.log(this.state.showcaseVid.liked);
-        const likeVideoCopyState = {...this.state.showcaseVid};
-        let likes = parseInt(likeVideoCopyState.likes);
-        likes--;
-        likeVideoCopyState.likes = likes;
-        likeVideoCopyState.liked = false;
-        this.setState({showcaseVid: likeVideoCopyState});
-      }
+    .put(`${server}${videoId}/likes`, {
+      id: videoId
+    })
+    .then(res => {
+      this.setState({showcaseVid: res.data});
+    })
+  }
+
+  // increase view 
+  addView = (videoId) => {
+    Axios
+    .put(`${server}${videoId}/views`, {
+      id: videoId
+    })
+    .then(res => {
+      this.setState({showcaseVid: res.data});
     })
   }
 

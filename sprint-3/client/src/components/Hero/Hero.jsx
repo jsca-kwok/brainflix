@@ -4,14 +4,12 @@ import playIcon from '../../assets/icons/svg/icon-play.svg';
 import pauseIcon from '../../assets/icons/svg/icon-pause.svg';
 import screenIcon from '../../assets/icons/svg/icon-fullscreen.svg';
 import volumeIcon from '../../assets/icons/svg/icon-volume.svg';
-import scrubberIcon from '../../assets/icons/svg/icon-scrubber-control.svg';
 
 const Hero = ({src, poster, duration, playing, playState}) => {
 
     const video = document.getElementById('video');
     const progressBar = document.getElementById('progress');
     const currentTime = document.getElementById('currentTime');
-    const scrubber = document.getElementById('scrubber');
 
     const togglePlay = (e) => {
         if (playing === false) {
